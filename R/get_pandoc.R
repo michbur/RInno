@@ -15,9 +15,12 @@
 #' @export
 
 get_Pandoc <- function(app_dir, Pandoc_version = rmarkdown::pandoc_version()) {
-  Pandoc_url <- Pandoc_url <- sprintf("https://github.com/jgm/pandoc/releases/download/%s/pandoc-%s-windows-x86_64.msi", Pandoc_version, Pandoc_version)
+  
+  #Pandoc_url <- sprintf("https://github.com/jgm/pandoc/releases/download/%s/pandoc-%s-windows-x86_64.msi", Pandoc_version, Pandoc_version)
+  Pandoc_url <- "https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-windows-x86_64.msi"
 
-  filename <- file.path(app_dir, sprintf("pandoc-%s-windows.msi", Pandoc_version))
+  #filename <- file.path(app_dir, sprintf("pandoc-%s-windows.msi", Pandoc_version))
+  filename <- file.path(app_dir, "pandoc-2.19.2-windows-x86_64.msi")
 
   if (file.exists(filename)) {
     cat("Using the copy of Pandoc already included:\n - ", filename, "\n")
